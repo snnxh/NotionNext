@@ -14,6 +14,8 @@ const Twikoo = ({ isDarkMode }) => {
   const el = siteConfig('COMMENT_TWIKOO_ELEMENT_ID', '#twikoo')
   const twikooCDNURL = siteConfig('COMMENT_TWIKOO_CDN_URL')
   const lang = siteConfig('LANG')
+  console.log('lang', lang)
+
   const [isInit] = useState(useRef(false))
 
   const loadTwikoo = async () => {
@@ -33,6 +35,7 @@ const Twikoo = ({ isDarkMode }) => {
           // path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
         })
         console.log('twikoo init', twikoo)
+
         isInit.current = true
       }
     } catch (error) {
